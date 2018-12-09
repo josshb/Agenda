@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+
+</head>
+
+<body>
+    <div class="jumbotron">
+        <div class="container">
+            <h1>Formulario de contacto</h1>
+            <br>
+            <form th:action="@{/admin/home1/addcontact}" th:object="${contactModel}" method="post">
+               <input type="text" th:field="*{id}">
+                Primer Nombre:
+                <input type="text" class="form-control" th:field="*{firstname}" th:value="${firstname}">
+                <br>
+                Apellido:
+                <input type="text" class="form-control" th:field="*{lastname}" th:value="${lastname}">
+                <br>
+                Telefono:
+                <input type="text" class="form-control" th:field="*{telephone}" th:value="${telephone}">
+                <br>
+                Ciudad:
+                <input type="text" class="form-control" th:field="*{city}" th:value="${city}">
+                <br>
+                <br>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">
+                    <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
+                    Aceptar
+                </button>
+            </form>
+            <a href="#" th:href="@{/admin/home1/cancel}"></a>
+            <button class="btn btn-lg btn-primary btn-block" type="submit">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>
+                Cancelar
+            </button>
+
+        </div>
+    </div>
+</body>
+
+</html>
